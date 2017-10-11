@@ -1,0 +1,45 @@
+{
+  "name": "kduma/passphrase-generator",
+  "type": "library",
+  "description": "Diceware pass phrase generator",
+  "keywords": [
+    "KDuma",
+    "Laravel",
+    "diceware"
+  ],
+  "homepage": "https://github.com/kduma-OSS/L5-passphrase-generator",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Krystian Duma",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "~7.0",
+    "genphrase/genphrase": "^1.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "KDuma\\PassphraseGenerator\\": "src"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    },
+    "laravel": {
+      "providers": [
+        "KDuma\\PassphraseGenerator\\PassphraseGeneratorServiceProvider"
+      ],
+      "aliases": {
+        "Passphrase": "KDuma\\PassphraseGenerator\\Facades\\Passphrase"
+      }
+    }
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true
+  }
+}
