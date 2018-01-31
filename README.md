@@ -23,6 +23,7 @@ Passphrase::get();
 Passphrase::setSeparators("!@#")
     ->setEntropy(30)
     ->useEnglishWordList()
+    ->dontUseModifiers()
     ->get();
 // returns: Chrome#Quite@Tribe
 ```
