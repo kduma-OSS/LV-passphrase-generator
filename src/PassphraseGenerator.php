@@ -15,6 +15,11 @@ class PassphraseGenerator
     protected $diceware = true;
 
     /**
+     * @var bool If true no words are capitalized or changed to lower case (words are not modified)
+     */
+    protected $modifiers = false;
+
+    /**
      * @var int entropy used to generate passphrase (must be between 26.0 and 120.0 bits)
      */
     protected $entropy = 50;
@@ -43,6 +48,28 @@ class PassphraseGenerator
     public function useEnglishWordList(): PassphraseGenerator
     {
         $this->diceware = false;
+        return $this;
+    }
+
+    /**
+     * Don't use modifiers
+     *
+     * @return PassphraseGenerator
+     */
+    public function dontUseModifiers(): PassphraseGenerator
+    {
+        $this->modifiers = true;
+        return $this;
+    }
+
+    /**
+     * Use modifiers
+     *
+     * @return PassphraseGenerator
+     */
+    public function useModifiers(): PassphraseGenerator
+    {
+        $this->modifiers = false;
         return $this;
     }
 
@@ -84,6 +111,7 @@ class PassphraseGenerator
             $gen->addWordlist('diceware.lst', 'diceware');
         }
 
+        $gen->disableWordModifier($this->modifiers);
         $gen->alwaysUseSeparators(true);
         $gen->setSeparators($this->separators);
 
