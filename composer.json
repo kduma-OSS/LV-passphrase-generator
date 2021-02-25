@@ -16,7 +16,7 @@
     }
   ],
   "require": {
-    "php": "~7.0",
+    "php": ">=7.4",
     "genphrase/genphrase": "^1.2"
   },
   "autoload": {
