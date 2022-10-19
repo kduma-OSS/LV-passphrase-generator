@@ -12,43 +12,45 @@ class PassphraseGenerator
     /**
      * @var bool use diceware word list instead of english word list
      */
-    protected $diceware = true;
+    protected bool $diceware = true;
 
     /**
      * @var bool If true no words are capitalized or changed to lower case (words are not modified)
      */
-    protected $modifiers = false;
+    protected bool $modifiers = false;
 
     /**
      * @var int entropy used to generate passphrase (must be between 26.0 and 120.0 bits)
      */
-    protected $entropy = 50;
+    protected int $entropy = 50;
 
     /**
      * @var string separators (one ore more)
      */
-    protected $separators = '-';
+    protected string $separators = '-';
 
     /**
      * Set word list to diceware
-     *
-     * @return PassphraseGenerator
      */
     public function useDicewareWordList(): PassphraseGenerator
     {
-        $this->diceware = true;
-        return $this;
+        $clone = clone $this;
+        
+        $clone->diceware = true;
+        
+        return $clone;
     }
 
     /**
      * Set word list to english
-     *
-     * @return PassphraseGenerator
      */
     public function useEnglishWordList(): PassphraseGenerator
     {
-        $this->diceware = false;
-        return $this;
+        $clone = clone $this;
+        
+        $clone->diceware = false;
+        
+        return $clone;
     }
 
     /**
@@ -58,8 +60,11 @@ class PassphraseGenerator
      */
     public function dontUseModifiers(): PassphraseGenerator
     {
-        $this->modifiers = true;
-        return $this;
+        $clone = clone $this;
+        
+        $clone->modifiers = true;
+        
+        return $clone;
     }
 
     /**
@@ -69,8 +74,11 @@ class PassphraseGenerator
      */
     public function useModifiers(): PassphraseGenerator
     {
-        $this->modifiers = false;
-        return $this;
+        $clone = clone $this;
+        
+        $clone->modifiers = false;
+        
+        return $clone;
     }
 
     /**
@@ -81,8 +89,11 @@ class PassphraseGenerator
      */
     public function setEntropy(int $entropy): PassphraseGenerator
     {
-        $this->entropy = $entropy;
-        return $this;
+        $clone = clone $this;
+        
+        $clone->entropy = $entropy;
+        
+        return $clone;
     }
 
     /**
@@ -93,14 +104,15 @@ class PassphraseGenerator
      */
     public function setSeparators(string $separators): PassphraseGenerator
     {
-        $this->separators = $separators;
-        return $this;
+        $clone = clone $this;
+        
+        $clone->separators = $separators;
+        
+        return $clone;
     }
 
     /**
      * generate and return passphrase
-     *
-     * @return string
      */
     public function get(): string
     {
