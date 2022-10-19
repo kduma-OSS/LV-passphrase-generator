@@ -11,5 +11,7 @@ class Passphrase extends Facade
      *
      * @return string
      */
-    protected static function getFacadeAccessor() { return PassphraseGenerator::class; }
+    protected static function getFacadeAccessor() { 
+        return PassphraseGenerator::class; 
+    }
 }
