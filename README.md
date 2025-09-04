@@ -6,6 +6,8 @@
 
 Diceware pass phrase generator
 
+Check full documentation here: [opensource.duma.sh/libraries/php/passphrase-generator](https://opensource.duma.sh/libraries/php/passphrase-generator)
+
 ## Install
 
 Via Composer
