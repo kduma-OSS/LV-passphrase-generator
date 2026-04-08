@@ -1,3 +1,11 @@
+# Package EOL
+
+> **This package is deprecated and no longer maintained.**
+>
+> The underlying dependency `genphrase/genphrase` is no longer actively maintained, and the package has not been updated to support modern Laravel versions. For passphrase generation, consider using dedicated libraries such as [hidehalo/nanoid-php](https://github.com/hidehalo/nanoid-php), [hackzilla/password-generator](https://github.com/hackzilla/password-generator), or implementing a simple diceware generator directly in your application using PHP 8.3+ and `random_int()`.
+
+---
+
 # Laravel Diceware Passphrase Generator
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
@@ -6,7 +14,7 @@
 
 Diceware pass phrase generator
 
-Check full documentation here: [opensource.duma.sh/libraries/php/passphrase-generator](https://opensource.duma.sh/libraries/php/passphrase-generator)
+Check full documentation here: [opensource.duma.sh/libraries/deprecated/passphrase-generator](https://opensource.duma.sh/libraries/deprecated/passphrase-generator)
 
 ## Install
 
